@@ -1,0 +1,27 @@
+function escapeCSV (s)
+  if string.find(s, '[,"]') then
+    s = '"' .. string.gsub(s, '"', '""') .. '"'
+  end
+  return s
+end
+
+-- Convert from table to CSV string
+function toCSV (tt)
+  local s = ""
+-- ChM 23.02.2014: changed pairs to ipairs 
+-- assumption is that fromCSV and toCSV maintain data as ordered array
+  for _,p in ipairs(tt) do  
+    s = s .. "," .. escapeCSV(p)
+  end
+  return string.sub(s, 2)      -- remove first comma
+end
+
+ae = peripheral.wrap("left")
+
+items = ae.getAvailableItems()
+
+data = toCSV(items)
+
+file = io.open("data", “r”)
+file:write(data)
+file:close()

@@ -1,0 +1,375 @@
+METHODMAN: Practical display for in game documentation of computercraft + addons
+
+Peripheral found
+	Side: left
+	Type: tileinterface
+
+tileinterface method list:
+
+	condenseItems
+	expandStack
+	getStoredPower
+	exportItem
+	swapStacks
+	destroyStack
+	pushItemIntoSlot
+	getAvailableItems
+	getAdvancedMethodsData
+	pushItem
+	getAllStacks
+	getAvgPowerInjection
+	getAvgPowerUsage
+	canExport
+	getInventoryName
+	pullItem
+	getStackInSlot
+	listSources
+	getCraftingCPUs
+	getIdlePowerUsage
+	getMaxStoredPower
+	getInventorySize
+	requestCrafting
+	getItemDetail
+	pullItemIntoSlot
+	doc
+	listMethods
+
+Open Peripherals Advanced Method Data
+
+1. getStoredPower
+
+Return Type: NUMBER
+Description: Get the stored power in the network.
+
+	Arguments: getStoredPower()
+	No Arguments
+
+2. getAdvancedMethodsData
+
+Return Type: TABLE
+Description: Get a complete table of information about all available methods
+
+	Arguments: getAdvancedMethodsData(method)
+
+		1. method
+		Description: 
+		Type: STRING
+
+3. pullItem
+
+Return Type: NUMBER
+Description: Pull an item from a slot in another inventory into a slot in this one. Returns the amount of items moved
+
+	Arguments: pullItem(direction, slot, maxAmount, intoSlot)
+
+		1. direction
+		Description: The direction of the other inventory. (north, south, east, west, up or down)
+		Type: STRING
+		2. slot
+		Description: The slot in the OTHER inventory that you're pulling from
+		Type: NUMBER
+		3. maxAmount
+		Description: The maximum amount of items you want to pull
+		Type: NUMBER
+		4. intoSlot
+		Description: The slot in the current inventory that you want to pull into
+		Type: NUMBER
+
+4. destroyStack
+
+Return Type: 
+Description: Destroy a stack
+
+	Arguments: destroyStack(slotNumber)
+
+		1. slotNumber
+		Description: The slot number, from 1 to the max amount of slots
+		Type: NUMBER
+
+5. getCraftingCPUs
+
+Return Type: TABLE
+Description: Get a list of tables representing the available CPUs in the network.
+
+	Arguments: getCraftingCPUs()
+	No Arguments
+
+6. requestCrafting
+
+Return Type: 
+Description: Requests the specified item to get crafted.
+
+	Arguments: requestCrafting(fingerprint, qty, cpu)
+
+		1. fingerprint
+		Description: Details of the item you want to craft. Can be found with .getStackInSlot on inventory and .getAvailableItems on AE network
+		Type: TABLE
+		2. qty
+		Description: The quantity of items you want to craft
+		Type: NUMBER
+		3. cpu
+		Description: The name of the CPU you want to use
+		Type: STRING
+
+7. listMethods
+
+Return Type: STRING
+Description: List all the methods available
+
+	Arguments: listMethods(filterSource)
+
+		1. filterSource
+		Description: 
+		Type: STRING
+
+8. exportItem
+
+Return Type: TABLE
+Description: Exports the specified item into the target inventory.
+
+	Arguments: exportItem(fingerprint, direction, maxAmount, intoSlot)
+
+		1. fingerprint
+		Description: Details of the item you want to export (can be result of .getStackInSlot() or .getAvailableItems())
+		Type: TABLE
+		2. direction
+		Description: Location of target inventory
+		Type: STRING
+		3. maxAmount
+		Description: The maximum amount of items you want to export
+		Type: NUMBER
+		4. intoSlot
+		Description: The slot in the other inventory that you want to export into
+		Type: NUMBER
+
+9. getInventorySize
+
+Return Type: NUMBER
+Description: Get the size of this inventory
+
+	Arguments: getInventorySize()
+	No Arguments
+
+10. getItemDetail
+
+Return Type: OBJECT
+Description: Retrieves details about the specified item from the ME Network.
+
+	Arguments: getItemDetail(item, proxy)
+
+		1. item
+		Description: Details of the item you are looking for: { id, [ dmg, [nbt_hash]] }
+		Type: TABLE
+		2. proxy
+		Description: If false, method will compute whole table, instead of returning proxy
+		Type: BOOLEAN
+
+11. pullItemIntoSlot
+
+Return Type: NUMBER
+Description: Pull an item from a slot in another inventory into a slot in this one. Returns the amount of items moved
+
+	Arguments: pullItemIntoSlot(direction, slot, maxAmount, intoSlot)
+
+		1. direction
+		Description: The direction of the other inventory. (north, south, east, west, up or down)
+		Type: STRING
+		2. slot
+		Description: The slot in the OTHER inventory that you're pulling from
+		Type: NUMBER
+		3. maxAmount
+		Description: The maximum amount of items you want to pull
+		Type: NUMBER
+		4. intoSlot
+		Description: The slot in the current inventory that you want to pull into
+		Type: NUMBER
+
+12. pushItemIntoSlot
+
+Return Type: NUMBER
+Description: Push an item from the current inventory into slot on the other one. Returns the amount of items moved
+
+	Arguments: pushItemIntoSlot(direction, slot, maxAmount, intoSlot)
+
+		1. direction
+		Description: The direction of the other inventory. (north, south, east, west, up or down)
+		Type: STRING
+		2. slot
+		Description: The slot in the current inventory that you're pushing from
+		Type: NUMBER
+		3. maxAmount
+		Description: The maximum amount of items you want to push
+		Type: NUMBER
+		4. intoSlot
+		Description: The slot in the other inventory that you want to push into
+		Type: NUMBER
+
+13. listSources
+
+Return Type: TABLE
+Description: List all method sources
+
+	Arguments: listSources()
+	No Arguments
+
+14. getStackInSlot
+
+Return Type: OBJECT
+Description: Get details of an item in a particular slot
+
+	Arguments: getStackInSlot(slotNumber, proxy)
+
+		1. slotNumber
+		Description: The slot number, from 1 to the max amount of slots
+		Type: NUMBER
+		2. proxy
+		Description: If true, method will return proxy instead of computing whole table
+		Type: BOOLEAN
+
+15. getAllStacks
+
+Return Type: TABLE
+Description: Get a table with all the items of the chest
+
+	Arguments: getAllStacks(proxy)
+
+		1. proxy
+		Description: If false, method will compute whole table, instead of returning proxy
+		Type: BOOLEAN
+
+16. swapStacks
+
+Return Type: 
+Description: Swap two slots in the inventory
+
+	Arguments: swapStacks(from, to, fromDirection, fromDirection)
+
+		1. from
+		Description: The first slot
+		Type: NUMBER
+		2. to
+		Description: The other slot
+		Type: NUMBER
+		3. fromDirection
+		Description: 
+		Type: STRING
+		4. fromDirection
+		Description: 
+		Type: STRING
+
+17. getAvgPowerInjection
+
+Return Type: NUMBER
+Description: Get the average power injection into the network
+
+	Arguments: getAvgPowerInjection()
+	No Arguments
+
+18. getAvgPowerUsage
+
+Return Type: NUMBER
+Description: Get the average power usage of the network.
+
+	Arguments: getAvgPowerUsage()
+	No Arguments
+
+19. condenseItems
+
+Return Type: 
+Description: Condense and tidy the stacks in an inventory
+
+	Arguments: condenseItems()
+	No Arguments
+
+20. doc
+
+Return Type: STRING
+Description: Brief description of method
+
+	Arguments: doc(method)
+
+		1. method
+		Description: 
+		Type: STRING
+
+21. getAvailableItems
+
+Return Type: TABLE
+Description: Get a list of the stored and craftable items in the network.
+
+	Arguments: getAvailableItems(full)
+
+		1. full
+		Description: Whether to provide full item information
+		Type: BOOLEAN
+
+22. getMaxStoredPower
+
+Return Type: NUMBER
+Description: Get the maximum stored power in the network.
+
+	Arguments: getMaxStoredPower()
+	No Arguments
+
+23. canExport
+
+Return Type: BOOLEAN
+Description: Returns true when the interface can export to side.
+
+	Arguments: canExport(direction)
+
+		1. direction
+		Description: Location of target inventory
+		Type: STRING
+
+24. getIdlePowerUsage
+
+Return Type: NUMBER
+Description: Get the idle power usage of the network.
+
+	Arguments: getIdlePowerUsage()
+	No Arguments
+
+25. getInventoryName
+
+Return Type: STRING
+Description: Get the name of this inventory
+
+	Arguments: getInventoryName()
+	No Arguments
+
+26. pushItem
+
+Return Type: NUMBER
+Description: Push an item from the current inventory into slot on the other one. Returns the amount of items moved
+
+	Arguments: pushItem(direction, slot, maxAmount, intoSlot)
+
+		1. direction
+		Description: The direction of the other inventory. (north, south, east, west, up or down)
+		Type: STRING
+		2. slot
+		Description: The slot in the current inventory that you're pushing from
+		Type: NUMBER
+		3. maxAmount
+		Description: The maximum amount of items you want to push
+		Type: NUMBER
+		4. intoSlot
+		Description: The slot in the other inventory that you want to push into
+		Type: NUMBER
+
+27. expandStack
+
+Return Type: TABLE
+Description: Get full stack information from stub one {id=..., [qty=...], [dmg=...]}
+
+	Arguments: expandStack(stack)
+
+		1. stack
+		Description: 
+		Type: TABLE
+
+
+--------------------
+
+All actual documentation is written by the mod developer who made the peripheral, not me. I just displayed it - happy computercrafting

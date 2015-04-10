@@ -1,0 +1,6 @@
+function fingerprint(item, dmg) {
+	result = {}
+	result["id"] = item
+	result["dmg"] = dmg
+	return result
+}

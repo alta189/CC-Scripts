@@ -1,0 +1,2437 @@
+{
+  {
+    is_fluid = false,
+    size = 7936,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:laboratoryblock",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 64,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:laboratoryblock",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 64,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:laboratoryblock",
+      dmg = 7,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:laboratoryblock",
+      dmg = 11,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 95,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockInterface",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:oak_stairs",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 9812,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:gold_ore",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "BigReactors:BRIngot",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "BigReactors:BRIngot",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "BigReactors:BRIngot",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "BigReactors:BRIngot",
+      dmg = 8,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockDrive",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 17978,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:gravel",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:wheat",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 13723,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:slime_ball",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:sapling",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 27585,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:log",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:log",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:log",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:log",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:upgrade",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:upgrade",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:upgrade",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockAlloySmelter",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 23131,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:iron_ore",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 9249,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:emerald",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:apple",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemBasicStorageCell.4k",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:glass_bottle",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 14339,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:redstone",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemItemConduit",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 58,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:itemBasicFilterUpgrade",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:grass",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCraftingStorage",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCraftingStorage",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCraftingStorage",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCraftingStorage",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 5492,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:glowstone_dust",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:bone",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockCapBank",
+      dmg = 1,
+      nbt_hash = "a25b058e84c7358311c62e4ac2eaf7eb",
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockCapBank",
+      dmg = 2,
+      nbt_hash = "60b91e7944c313e4cd8892ff9588d98b",
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockCapBank",
+      dmg = 3,
+      nbt_hash = "59b8a9d9c7ab159344e472e362b34ac2",
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "ForgeMicroblock:sawDiamond",
+      dmg = 7,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:blockOreTin",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:blaze_rod",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 20416,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 20480,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 10065,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 20301,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 7,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 20065,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 8,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 100,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 9,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 10600,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 10,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 10176,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 11,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 10132,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 12,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 6,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 13,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 14,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 15,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 16,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 17,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 18,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 6,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 19,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 51,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 20,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 22,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 231,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 23,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 258,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 24,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 25,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 44,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 26,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 27,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 28,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 29,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 300,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 30,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 31,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 35,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 36,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 37,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 38,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 39,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 41,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 42,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 43,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 44,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3019,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 46,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 258,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 52,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 8,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiMaterial",
+      dmg = 53,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 7093,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:stick",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:hopper",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 148,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockMolecularAssembler",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:wheat_seeds",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemLiquidConduit",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemLiquidConduit",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemLiquidConduit",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 20049,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:itemMaterial",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 5030,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:itemMaterial",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 11549,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMaterial",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 9,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMaterial",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMaterial",
+      dmg = 4,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMaterial",
+      dmg = 6,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 25538,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:netherrack",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockSecurity",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1218,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:gold_ingot",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1254,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:flint",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ToolMemoryCard",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockTank",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2988,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:stone_slab",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockVat",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 979,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:piston",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockCombustionGenerator",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 10195,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:stone",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3000,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:iron_ingot",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "Botania:manaResource",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "Botania:manaResource",
+      dmg = 4,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "Botania:manaResource",
+      dmg = 7,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:reeds",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockStirlingGenerator",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 12520,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:clay_ball",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemConduitFacade",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemConduitFacade",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:paper",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 300,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:comparator",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2696,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:lever",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:cauldron",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3936,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:diamond",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockQuartzGlass",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 27471,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:obsidian",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 7,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:gold_nugget",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:spider_eye",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:porkchop",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 15053,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:quartz",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 63,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockWireless",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 7098,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:redstone_torch",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCraftingMonitor",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 20261,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:glass",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:diamondChisel",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:lapis_ore",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:carrot",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 8,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:iron_bars",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 21153,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:planks",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:wooden_slab",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 100,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockQuartzLamp",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:glowstone",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 86,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:sticky_piston",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 17,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "aobd:dustFzDarkIron",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:potato",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:sandstone",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 8,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMEConduit",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMEConduit",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:nether_brick",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 608,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "ThermalFoundation:Ore",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "ThermalExpansion:Machine",
+      dmg = 2,
+      nbt_hash = "b202b589ab62d3a11f451306b25b6c6c",
+    },
+  },
+  {
+    is_fluid = false,
+    size = 100,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMachinePart",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 50,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemMachinePart",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 21,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:redstone_block",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:nether_brick_stairs",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ToolCertusQuartzCuttingKnife",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemBasicCapacitor",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 13,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemBasicCapacitor",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemBasicCapacitor",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:blockWirelessCharger",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1000,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemPowerConduit",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemPowerConduit",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemPowerConduit",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 20013,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:sand",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1629,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:cobblestone",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:mycelium",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 32,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "factorization:DarkIronOre",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 701,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "ThermalFoundation:material",
+      dmg = 36,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:chest",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockInscriber",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCharger",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockSagMill",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 129,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:dirt",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 40,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 11,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 92,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 16,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 47,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 140,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 15,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 180,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 220,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 4,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 240,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 260,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 280,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 340,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 8,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 360,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 19,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 380,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 400,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 440,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemMultiPart",
+      dmg = 480,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 6913,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "ThermalExpansion:material",
+      dmg = 512,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:blockPainter",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 18275,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:coal",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:coal",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemBasicStorageCell.16k",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2300,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:sugar",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 7,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "ForgeMicroblock:microblock",
+      dmg = 1,
+      nbt_hash = "86f0a85543bfe718b4ff70f551f98a58",
+    },
+  },
+  {
+    is_fluid = false,
+    size = 15031,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 519,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2887,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 4,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3695,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 5,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 6,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 344,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 7,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 15340,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 11,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1757,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:itemDust",
+      dmg = 13,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:nether_brick_fence",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 10000,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:glass_pane",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1776,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:crafting_table",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 7,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemRedstoneConduit",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemRedstoneConduit",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemRedstoneConduit",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ToolBiometricCard",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 46067,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:dye",
+      dmg = 4,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:dye",
+      dmg = 6,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:dye",
+      dmg = 15,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemBasicStorageCell.1k",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockEnergyAcceptor",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 17243,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:ender_pearl",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 19,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "MineFactoryReloaded:machine.1",
+      dmg = 8,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 12052,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:blockFusedQuartz",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 12195,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:blockFusedQuartz",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 12017,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:blockFusedQuartz",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 12017,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "EnderIO:blockFusedQuartz",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "IC2:itemIngot",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:itemIngot",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 3,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:itemIngot",
+      dmg = 6,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:string",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:feather",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 101,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 74,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 100,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 2,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 98,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 3,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 4,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 50,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 5,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 51,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 6,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "EnderIO:itemAlloy",
+      dmg = 7,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:item.ItemBasicStorageCell.64k",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 158,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "IC2:blockOreCopper",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 25535,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:soul_sand",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockChest",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 0,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "chisel:autoChisel",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 2,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCraftingUnit",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "appliedenergistics2:tile.BlockCraftingUnit",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 33,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:coal_ore",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 997,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:furnace",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = true,
+    fingerprint = {
+      id = "minecraft:stonebrick",
+      dmg = 0,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:stonebrick",
+      dmg = 1,
+    },
+  },
+  {
+    is_fluid = false,
+    size = 1,
+    is_item = true,
+    is_craftable = false,
+    fingerprint = {
+      id = "minecraft:stonebrick",
+      dmg = 2,
+    },
+  },
+}

@@ -1,0 +1,28 @@
+timeout = 2
+fullwait = 20
+
+function pull()
+  rs.setOutput("back", true)
+  sleep(timeout)
+  rs.setOutput("back", false)
+end
+
+function forward()
+  rs.setOutput("left", true)
+  sleep(timeout)
+  rs.setOutput("left", false)
+end
+
+function run(times) 
+  for i=1, times, 1 do
+    forward()
+    pull()
+    sleep(fullwait)
+  end
+end
+
+while true do
+  local senderId, message, protocol = rednet.receive()
+  int times = tonumber(message)
+  run(times)
+end
