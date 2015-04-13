@@ -1,0 +1,3 @@
+rs.setOutput("right", true)
+
+shell.startup("nexus/portal")
