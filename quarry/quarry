@@ -1,5 +1,6 @@
-timeout = 2
-fullwait = 20
+
+local timeout = 2
+local fullwait = 16
 
 function pull()
   rs.setOutput("back", true)
