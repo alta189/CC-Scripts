@@ -1,0 +1,346 @@
+-- Code modified from https://www.reddit.com/r/feedthebeast/comments/2em0qi/computercraft_mystcraft_portal_script/
+
+-------------------------------------------------
+-- This script is designed to handle a touch
+-- screen controlled mystcraft portal, and
+-- requires the Touchpoint API to run (pFHeia96),
+-- saved as "touchpoint" on the computer.
+--
+-- Most important variables to adjust are listed
+-- first, and the script assumes that you have
+-- two chests (one for storage, one for removal),
+-- as well as this computer and a book receptacle
+-- adjacent to the storage chest. You also need
+-- an advanced monitor connected to the computer.
+-------------------------------------------------
+os.loadAPI("/libs/touchpoint") --Do not adjust.
+
+--Use either the side of the computer touching the
+--object, or the modem connecting them.
+local monitorLocation = "monitor_1"
+local chestLocation = "diamond_1"
+
+--Use compass direction from the storage chest to
+--the listed object (or up/down).
+local directionToPortal = "up"
+local directionToEject = "south"
+
+--Primary customization options are below.
+local textSize = 1
+local minimumNameLength = 4
+local buttonPadding = 1 --Min 1, Space before/after
+local centerPadding = 0 --Min 0, Space before/after
+local idleButtonColor = colors.red
+local activeButtonColor = colors.lime
+local portalDuration = 5 --In Seconds
+local showEject = true
+local showPageNum = true
+local showTotalPages = true
+local pageSeparator = " of "
+
+--Secondary customization options are below.
+local drawBorders = false
+local borderSymbol1 = "-"
+local borderSymbol2 = "+"
+local pageBack = "Prev Page"
+local pageFore = "Next Page"
+local ejectButton = "Eject"
+local resetButton = "Refresh"
+
+--Used internally. Do not adjust.
+local mon = peripheral.wrap(monitorLocation)
+local touch = touchpoint.new(monitorLocation)
+local chest = peripheral.wrap(chestLocation)
+local monX = 0
+local monY = 0
+local monMidL = 0
+local monMidR = 0
+local maxNameLength = 0
+local problem = false
+local iBC = idleButtonColor
+local aBC = activeButtonColor
+local names = {}
+local curPage = 1
+local lastPage = 1
+local namesPerPage = 1
+local pages = {}
+local eviction = false
+local pLabel
+local event, p1
+
+function centerText(cString)
+  local sSize = string.len(cString)
+  offset = math.floor((monX - sSize) / 2) + 1
+  return offset
+end
+
+function populateNames()
+  names = {}
+  
+  local invSize = chest.getInventorySize()
+  local stackInfo = chest.getAllStacks(false)
+  for a=1,invSize + 1,1 do
+    if stackInfo[a] ~= nil then
+      names[#names + 1] = {name = stackInfo[a]["myst_book"]["destination"],slot = a}
+      print(#names..": "..names[#names]["name"]..", "..names[#names]["slot"])
+    end
+  end
+end
+
+function returnDir(myDir)
+  if myDir == "north" then
+    return "south"
+  elseif myDir == "south" then
+    return "north"
+  elseif myDir == "east" then
+    return "west"
+  elseif myDir == "west" then
+    return "east"
+  elseif myDir == "down" then
+    return "up"
+  elseif myDir == "up" then
+    return "down"
+  else
+    problem = true
+    return "oops..."
+  end
+end
+
+function prepareScreen()
+  mon.clear()
+  mon.setTextScale(textSize)
+  monX, monY = mon.getSize()
+  
+  if (monY < 5) or (monX < (minimumNameLength * 2) + 4) then
+    mon.setBackgroundColor(colors.red)
+    mon.setTextColor(colors.black)
+    mon.setCursorPos(1,1)
+    mon.write("!!!")
+    print("Screen too small with current resolution, please adjust.")
+    problem = true
+  else
+    if math.floor(monX/2) == math.ceil(monX/2) then --Even
+      monMidR = monX/2 + 1
+      monMidL = monMidR - 1
+      maxNameLength = (monX - 4)/2 - (centerPadding + buttonPadding) * 2
+    else --Odd
+      monMidR = math.floor(monX/2) + 1
+      monMidL = monMidR
+      maxNameLength = (monX - 3)/2 - (centerPadding + buttonPadding) * 2
+    end
+    namesPerPage = math.ceil((monY - 4) / 2) * 2
+  end
+end
+
+function checkDirections()
+  if directionToEject == "oops..." then
+    print("Direction to Eject isn't a valid forge direction.")
+    print("Please use north, south, east, west, up or down.")
+  end
+  
+  if directionToPortal == "oops..." then
+    print("Direction to Portal isn't a valid forge direction.")
+    print("Please use north, south, east, west, up or down.")
+  end  
+end
+
+function initialPull()
+  chest.pullItemIntoSlot(directionToPortal,1,1,1)
+end
+
+function determineLength(myString)
+  local theLength = 0
+  if string.len(myString) > maxNameLength then
+    theLength = maxNameLength + buttonPadding * 2
+  else
+    theLength = string.len(myString) + buttonPadding * 2
+  end
+  
+  return theLength
+end
+
+function drawRuler(vert)
+  local toggle = true
+  for a=1,monX,1 do
+    mon.setCursorPos(a,vert)
+    if toggle then
+      mon.write(borderSymbol1)
+      toggle = false
+    else
+      mon.write(borderSymbol2)
+      toggle = true
+    end
+  end
+end
+
+function drawLabels()
+  mon.setBackgroundColor(colors.black)
+  
+  if showPageNum then
+    if showTotalPages then
+      pLabel = curPage..pageSeparator..#pages
+    else
+      pLabel = curPage
+    end
+  
+    mon.setCursorPos(centerText(pLabel),1)
+    mon.write(pLabel)
+  end
+  
+  if drawBorders then
+    drawRuler(2)
+    drawRuler(monY - 1)
+  end
+end
+
+function prevPage()
+  lastPage = curPage
+  
+  if eviction then
+    evictBook()
+  end
+  
+  pages[lastPage]:toggleButton(pageBack)
+  drawLabels()
+  os.sleep(0.125)
+  
+  curPage = curPage - 1
+  if curPage < 1 then 
+    curPage = #pages
+  end
+  pages[lastPage]:toggleButton(pageBack)
+  drawLabels()
+end
+
+function nextPage()
+  lastPage = curPage
+  
+  if eviction then
+    evictBook()
+  end
+  
+  pages[lastPage]:toggleButton(pageFore)
+  drawLabels()
+  os.sleep(0.125)
+  
+  curPage = curPage + 1
+  if curPage > #pages then 
+    curPage = 1
+  end
+  pages[lastPage]:toggleButton(pageFore)
+  pages[curPage]:draw()
+  drawLabels()
+end
+
+function doAction()
+  pages[curPage]:toggleButton(p1)
+  drawLabels()
+  for k,v in ipairs(names) do
+    if v["name"] == p1 then
+      curSlot = v["slot"]
+      break
+    end
+  end
+  
+  if eviction then
+    chest.pushItemIntoSlot(directionToEject,curSlot,1,1)
+    os.sleep(0.125)
+    refresh()
+    eviction = false
+  else
+    chest.pushItemIntoSlot(directionToPortal,curSlot,1,1)
+    os.sleep(portalDuration)
+    chest.pullItemIntoSlot(directionToPortal,1,1,curSlot)
+    pages[curPage]:toggleButton(p1)
+    drawLabels()
+  end
+end
+
+
+function refresh()
+  print("Collecting Names.")
+  populateNames()
+  
+  pages = {}
+  
+  local myPage = 1
+  
+  if #names > 0 then
+    while (myPage - 1) * namesPerPage < #names do
+      print("Populating page "..myPage..".")
+      buildPage(myPage)
+      myPage = myPage + 1
+    end
+  else
+    buildPage(1)
+  end
+  
+  if curPage > #pages then
+    curPage = #pages
+  end
+  
+  pages[curPage]:draw()
+  drawLabels()
+end
+
+function rebuildPages()
+  pages[curPage]:toggleButton(resetButton)
+  drawLabels()
+  refresh()
+end
+
+function evictBook()
+  pages[curPage]:toggleButton(ejectButton)
+  if eviction then
+    eviction = false
+  else
+    eviction = true
+  end
+  drawLabels()
+end
+
+function buildPage(pN)
+  pages[pN] = touchpoint.new(monitorLocation)
+  pages[pN]:add(pageBack, prevPage, 1, 1, determineLength(pageBack), 1, iBC, aBC)
+  pages[pN]:add(pageFore, nextPage, monX - determineLength(pageFore) + 1, 1, monX, 1, iBC, aBC)
+  
+  if #names > 0 then
+    local curIndex = (pN - 1) * namesPerPage + 1
+    for y = 3, monY - 2, 2 do
+      if curIndex < #names + 1 then
+        pages[pN]:add(names[curIndex]["name"], doAction, 2, y, monMidL - 1 - centerPadding, y, iBC, aBC)
+      else
+        break
+      end
+      curIndex = curIndex + 1
+      if curIndex < #names + 1 then
+        pages[pN]:add(names[curIndex]["name"], doAction, monMidR + 1 + centerPadding, y, monX - 1, y, iBC, aBC)
+      else
+        break
+      end
+      curIndex = curIndex + 1
+    end
+  end
+  
+  pages[pN]:add(resetButton, rebuildPages, 1, monY, determineLength(resetButton), monY, iBC, aBC)
+  if showEject then
+    pages[pN]:add(ejectButton, evictBook, monX - determineLength(ejectButton) + 1, monY, monX, monY, iBC, aBC)
+  end
+end
+
+prepareScreen()
+checkDirections()
+
+if not problem then
+  initialPull()
+  refresh()
+  print("Starting main control loop.")
+  while true do
+    pages[curPage]:draw()
+    drawLabels()
+    event, p1 = pages[curPage]:handleEvents(os.pullEvent())
+    if event == "button_click" then
+      pages[curPage].buttonList[p1].func()
+    end
+  end
+end
