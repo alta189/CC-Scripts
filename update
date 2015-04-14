@@ -1,1 +1,2 @@
 shell.run("pastebin run W5ZkVYSi alta189 CC-Scripts")
+os.reboot()
