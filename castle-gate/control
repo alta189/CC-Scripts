@@ -2,21 +2,14 @@ local upColor = colors.blue
 local downColor = colors.brown
 local bundledSide = "back"
 local count = 5
-local wait = .2
+local wait = 7.75
 local wirelessSide = "top"
 
-function pulse(dirColor) 
+function go(dirColor) 
   redstone.setBundledOutput(bundledSide, dirColor)
   sleep(wait)
   redstone.setBundledOutput(bundledSide, 0)
-  sleep(wait)
-end
-
-
-function go(dirColor) 
-  for i = 1, count, 1 do
-    pulse(dirColor)
-  end
+  sleep(.2)
 end
 
 function listen() 
