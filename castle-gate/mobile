@@ -1,0 +1,15 @@
+local args = { ... }
+
+function printHelp()
+  print("Correct usage: gate <open/close>")
+end
+
+if args == nil then
+ printHelp()
+elseif args[1] == "open" then
+  print("Opening")
+elseif args[1] == "close" then 
+  print("Closing")
+else
+  printHelp()
+end

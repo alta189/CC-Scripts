@@ -1,0 +1,37 @@
+local upColor = colors.blue
+local downColor = colors.brown
+local bundledSide = "back"
+local count = 5
+local wait = .1
+local wirelessSide = "top"
+
+function pulse(dirColor) 
+  redstone.setBundledOutput(bundledSide, dirColor)
+  sleep(wait)
+  redstone.setBundledOutput(bundledSide, 0)
+  sleep(wait)
+end
+
+
+function go(dirColor) 
+  for i = 1, count, 1 do
+    pulse(dirColor)
+  end
+end
+
+function listen() 
+  local senderId, message, protocol = rednet.receive("altaCastleGate")
+
+  if message == "open" then
+    go(upColor)
+  elseif message == "close" then
+    go(downColor)
+  end
+end
+
+rednet.open(wirelessSide)
+rednet.host("altaCastleGate", "altaCastleGate")
+
+while true do
+  listen()
+end

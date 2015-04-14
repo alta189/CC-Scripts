@@ -1,0 +1,2 @@
+print("settings up")
+fs.copy("/castle-gate/mobile", "/gate")
