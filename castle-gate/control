@@ -2,7 +2,7 @@ local upColor = colors.blue
 local downColor = colors.brown
 local bundledSide = "back"
 local count = 5
-local wait = .1
+local wait = .2
 local wirelessSide = "top"
 
 function pulse(dirColor) 
