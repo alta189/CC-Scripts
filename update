@@ -1,3 +1,1 @@
-shell.run("openp/github get alta189/CC-Scripts/master/util/gitget gitget")
-shell.run("gitget alta189 CC-Scripts")
-fs.delete("gitget")
+shell.run("pastebin run W5ZkVYSi alta189 CC-Scripts")
