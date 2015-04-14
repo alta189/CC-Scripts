@@ -4,12 +4,16 @@ function printHelp()
   print("Correct usage: gate <open/close>")
 end
 
+rednet.open("back")
+
 if args == nil then
  printHelp()
 elseif args[1] == "open" then
   print("Opening")
+  rednet.broadcast("open", "altaCastleGate")
 elseif args[1] == "close" then 
   print("Closing")
+  rednet.broadcast("close", "altaCastleGate")
 else
   printHelp()
 end

@@ -21,11 +21,15 @@ end
 
 function listen() 
   local senderId, message, protocol = rednet.receive("altaCastleGate")
-
+  print(senderId.."["..protocol.."]: "..message)
   if message == "open" then
     go(upColor)
+    print("Opening")
   elseif message == "close" then
     go(downColor)
+    print("Closing")
+  else
+    print("Unknown")
   end
 end
 
