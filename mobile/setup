@@ -1,2 +1,3 @@
 print("settings up")
+fs.delete("/gate")
 fs.copy("/castle-gate/mobile", "/gate")
