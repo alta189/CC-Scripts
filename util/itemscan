@@ -48,7 +48,7 @@ end
 
 function printTable(table, depth) 
   local result = ""
-  for name,value in pairs(stack) do
+  for name,value in pairs(table) do
     result = result .. printDepth(depth) .. name.. ' = ' .. tostring(value) .. "\n"
     if type(value) == "table" then
       printTable(value, depth + 1)
