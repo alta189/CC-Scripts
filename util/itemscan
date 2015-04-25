@@ -47,7 +47,7 @@ if pastebin then
   os.loadAPI("/libs/pastebinAPI")
   local pb = pastebinAPI
   local result = printStackString()
-  pb.create(result)
+  print(pb.create(result))
 else
   printStackConsole()
 end
