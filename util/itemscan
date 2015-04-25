@@ -1,0 +1,32 @@
+local args = { ... }
+
+local side = ""
+
+if #args < 1 then
+  side = args[1]
+end
+
+if (side == "") then
+  error('You must choose a side')
+
+inv = peripheral.wrap(side)
+if not inv then 
+  error('no inventory')
+end
+
+stacks = chest.getAllStacks(false)
+if not stacks then
+  error('all stacks returned nothing!')
+end
+
+for stackNum = 1, #stacks do
+  term.clear()
+  term.setCursorPos(1, 1)
+  print("Slot "..stackNum..": ")
+  for name,value in pairs(stack) do
+    print(name.. ' = ' .. tostring(value))
+  end
+  read()
+end
+
+  
