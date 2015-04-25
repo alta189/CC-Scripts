@@ -37,10 +37,29 @@ function printStackString()
     result = result .. "Slot "..stackNum..": "
     for name,value in pairs(stack) do
       result = result .. name.. ' = ' .. tostring(value) .. "\n"
+      if type(value) == "table" then
+        printTable(table, 1)
+      end
     end
     result = result .. "\n \n"
   end
   return result
+end
+
+function printTable(table, depth) 
+  local result = ""
+  for name,value in pairs(stack) do
+    result = result .. printDepth(depth) .. name.. ' = ' .. tostring(value) .. "\n"
+    if type(value) == "table" then
+      printTable(value, depth + 1)
+  end
+end
+
+function printDepth(depth) 
+  local result = ""
+  for i = 1, depth do
+    result = result .. "  "
+  end
 end
 
 if pastebin then
