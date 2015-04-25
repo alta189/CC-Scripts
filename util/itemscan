@@ -2,7 +2,7 @@ local args = { ... }
 
 local side = ""
 
-if #args > 1 then
+if #args >= 1 then
   side = args[1]
 end
 
@@ -10,17 +10,18 @@ if side == "" then
   error('You must choose a side')
 end
 
-inv = peripheral.wrap(side)
+local inv = peripheral.wrap(side)
 if not inv then 
   error('no inventory')
 end
 
-stacks = chest.getAllStacks(false)
+local stacks = inv.getAllStacks(false)
 if not stacks then
   error('all stacks returned nothing!')
 end
 
 for stackNum = 1, #stacks do
+  local stack = stacks[stackNum]
   term.clear()
   term.setCursorPos(1, 1)
   print("Slot "..stackNum..": ")
