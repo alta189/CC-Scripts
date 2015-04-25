@@ -6,7 +6,7 @@ if #args > 1 then
   side = args[1]
 end
 
-if (side == "") then
+if side == "" then
   error('You must choose a side')
 end
 
