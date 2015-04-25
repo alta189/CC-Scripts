@@ -2,7 +2,7 @@ local args = { ... }
 
 local side = ""
 
-if #args < 1 then
+if #args > 1 then
   side = args[1]
 end
 
