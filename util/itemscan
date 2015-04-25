@@ -40,12 +40,13 @@ function printStackString()
     end
     result = result .. "\n"
   end
+  return result
 end
 
 if pastebin then
   os.loadAPI("/libs/pastebinAPI")
   local pb = pastebinAPI
-  local result = printStackString();
+  local result = printStackString()
   pb.create(result)
 else
   printStackConsole()
