@@ -36,9 +36,9 @@ function printStackString()
     local stack = stacks[stackNum]
     result = result .. "Slot "..stackNum..": "
     for name,value in pairs(stack) do
-      result = result .. name.. ' = ' .. tostring(value)
+      result = result .. name.. ' = ' .. tostring(value) .. "\n"
     end
-    result = result .. "\n"
+    result = result .. "\n \n"
   end
   return result
 end
