@@ -1,0 +1,155 @@
+--http://www.computercraft.info/forums2/index.php?/topic/15498-pastebin-api/
+
+API_version = 0.7
+
+-- Internal function that parses the pastebin XML response.
+local function parse(response)
+    local objs = {}
+    for prefix, objstr in string.gmatch(response, "<(.-)>(.-)</%1>") do
+        local obj = {}
+        for key, value in string.gmatch(objstr, "<"..prefix.."_(.-)>(.-)</"..prefix.."_%1>") do
+            obj[key] = value
+        end
+        objs[#objs+1] = obj
+    end
+    return objs
+end
+
+-- Used to be a custom function, but I realized CC-Lua had one already.
+local url_encode = textutils.urlEncode
+
+-- My Pastebin API key.
+local api_dev_key = "c09548865c8dd0c2bf57d0d060b5e96a"
+
+-- Allowable inputs for paste creation options.
+local paste_formats = {["4cs"]=true,["6502acme"]=true,["6502kickass"]=true,["6502tasm"]=true,abap=true,actionscript=true,actionscript3=true,ada=true,algol68=true,apache=true,applescript=true,apt_sources=true,arm=true,asm=true,asp=true,asymptote=true,autoconf=true,autohotkey=true,autoit=true,avisynth=true,awk=true,bascomavr=true,bash=true,basic4gl=true,bibtex=true,blitzbasic=true,bnf=true,boo=true,bf=true,c=true,c_mac=true,cil=true,csharp=true,cpp=true,["cpp-qt"]=true,c_loadrunner=true,caddcl=true,cadlisp=true,cfdg=true,chaiscript=true,clojure=true,klonec=true,klonecpp=true,cmake=true,cobol=true,coffeescript=true,cfm=true,css=true,cuesheet=true,d=true,dcl=true,dcpu16=true,dcs=true,delphi=true,oxygene=true,diff=true,div=true,dos=true,dot=true,e=true,ecmascript=true,eiffel=true,email=true,epc=true,erlang=true,fsharp=true,falcon=true,fo=true,f1=true,fortran=true,freebasic=true,freeswitch=true,gambas=true,gml=true,gdb=true,genero=true,genie=true,gettext=true,go=true,groovy=true,gwbasic=true,haskell=true,haxe=true,hicest=true,hq9plus=true,html4strict=true,html5=true,icon=true,idl=true,ini=true,inno=true,intercal=true,io=true,j=true,java=true,java5=true,javascript=true,jquery=true,kixtart=true,latex=true,ldif=true,lb=true,lsl2=true,lisp=true,llvm=true,locobasic=true,logtalk=true,lolcode=true,lotusformulas=true,lotusscript=true,lscript=true,lua=true,m68k=true,magiksf=true,make=true,mapbasic=true,matlab=true,mirc=true,mmix=true,modula2=true,modula3=true,["68000devpac"]=true,mpasm=true,mxml=true,mysql=true,nagios=true,newlisp=true,text=true,nsis=true,oberon2=true,objeck=true,objc=true,["ocaml-brief"]=true,ocaml=true,octave=true,pf=true,glsl=true,oobas=true,oracle11=true,oracle8=true,oz=true,parasail=true,parigp=true,pascal=true,pawn=true,pcre=true,per=true,perl=true,perl6=true,php=true,["php-brief"]=true,pic16=true,pike=true,pixelbender=true,plsql=true,postgresql=true,povray=true,powershell=true,powerbuilder=true,proftpd=true,progress=true,prolog=true,properties=true,providex=true,purebasic=true,pycon=true,python=true,pys60=true,q=true,qbasic=true,rsplus=true,rails=true,rebol=true,reg=true,rexx=true,robots=true,rpmspec=true,ruby=true,gnuplot=true,sas=true,scala=true,scheme=true,scilab=true,sdlbasic=true,smalltalk=true,smarty=true,spark=true,sparql=true,sql=true,stonescript=true,systemverilog=true,tsql=true,tcl=true,teraterm=true,thinbasic=true,typoscript=true,unicon=true,uscript=true,ups=true,urbi=true,vala=true,vbnet=true,vedit=true,verilog=true,vhdl=true,vim=true,visualprolog=true,vb=true,visualfoxpro=true,whitespace=true,whois=true,winbatch=true,xbasic=true,xml=true,xorg_conf=true,xpp=true,yaml=true,z80=true,zxbasic=true}
+local paste_private_options = {[0]=true,[1]=true,[2]="Private"}
+local paste_expire_date_options = {["N"]=true,["10M"]=true,["1H"]=true,["1D"]=true,["1W"]=true,["2W"]=true,["1M"]=true}
+
+-- Creates a new paste. First argument required. All others optional. Pass explicit nils to pass over an argument.
+-- Example: local paste = pastebin.create("This is my awesome paste text!", nil, "Super cool name", nil, nil, "N")
+-- 
+-- Returns paste URL or error code.
+function create(api_paste_code, api_user_key, api_paste_name, api_paste_format, api_paste_private, api_paste_expire_date)
+  assert(type(api_paste_code) == "string", "Only strings can be uploaded as pastes! Use `tostring()` if necessary!")
+  local urlstr = {"api_dev_key=", url_encode(api_dev_key), "&api_option=paste", "&api_paste_code=", url_encode(api_paste_code)}
+  if api_user_key then if type(api_user_key) == "string" then local len = #urlstr urlstr[len+1] = "&api_user_key=" urlstr[len+2] = url_encode(api_user_key) else io.stderr:write("Invalid user key!\n") end end
+  if api_paste_name then if type(api_paste_name) == "string" then local len = #urlstr urlstr[len+1] = "&api_paste_name=" urlstr[len+2] = url_encode(api_paste_name) else io.stderr:write("Only strings can be used to name pastes! Use `tostring()` if necessary!") end end
+  if api_paste_format then if paste_formats[api_paste_format] then local len = #urlstr urlstr[len+1] = "&api_paste_format=" urlstr[len+2] = url_encode(api_paste_format) else io.stderr:write("Invalid paste format!") end end
+  if api_paste_private then local paste_private_long = paste_private_options[api_paste_private] if paste_private_long then if paste_private_long == "Private" and not api_user_key then io.stderr:write("User key necessary for private pastes!") else local len = #urlstr urlstr[len+1] = "&api_paste_private=" urlstr[len+2] = url_encode(api_paste_private) end else io.stderr:write("Invalid privacy level") end end
+  if api_paste_expire_date then if paste_expire_date_options[api_paste_expire_date] then local len = #urlstr urlstr[len+1] = "&api_paste_expire_date=" urlstr[len+2] = api_paste_expire_date else io.stderr:write("Invalid paste expiration date!") end end
+
+  return http.post("http://pastebin.com/api/api_post.php", table.concat(urlstr)).readAll()
+end
+
+-- Authenticates with Pastebin.
+-- Example: local agente382 = pastebin.login("AgentE382", "thisisnotmypassword")
+-- 
+-- Returns user key for use with other API functions.
+function login(api_user_name, api_user_password)
+    assert(type(api_user_name) == "string" and type(api_user_password) == "string", "Both arguments are required and must be strings!")
+    return http.post("http://pastebin.com/api/api_login.php", "api_dev_key="..url_encode(api_dev_key).."&api_user_name="..url_encode(api_user_name).."&api_user_password="..url_encode(api_user_password)).readAll()
+end
+
+-- Deletes a paste. Uses user key from login(). api_paste_key must be a string containing the end of the paste's URL.
+-- Example: local response = pastebin.delete(agente382, "Rxe673BJ")
+-- 
+-- Returns "Paste Removed" or error message.
+function delete(api_user_key, api_paste_key)
+    assert(type(api_user_key) == "string" and type(api_paste_key) == "string", "Both arguments required and must be strings!")
+    return http.post("http://pastebin.com/api/api_post.php", "api_dev_key="..url_encode(api_dev_key).."&api_user_key="..url_encode(api_user_key).."&api_paste_key="..url_encode(api_paste_key).."&api_option=delete").readAll()
+end
+
+-- Fetches a paste from Pastebin.
+-- Example: local rc4 = pastebin.get("Rxe673BJ")
+-- 
+-- Returns requested paste as a string or an error message.
+function get(api_paste_key)
+    assert(type(api_paste_key) == "string", "Enter a valid paste key as a string!")
+    local response = http.get("http://pastebin.com/raw.php?i="..url_encode(api_paste_key))
+    return response and response.readAll()
+end
+
+-- Lists data about all of a user's pastes. Uses user key from login(). Note that this makes it impossible to get data about random people's pastes.
+-- Example: local allpastes = pastebin.list(agente382, 1000)
+-- 
+-- Returns a list of data about all pastes associated with a user's account, using the table format described at the end of the document.
+function list(api_user_key, api_results_limit)
+    assert(type(api_user_key) == "string", "Enter a valid user key as a string!")
+    local urlstr = {"api_dev_key=", url_encode(api_dev_key), "&api_user_key=", url_encode(api_user_key), "&api_option=list"}
+    if api_results_limit then if type(api_results_limit) == "number" then if api_results_limit > 1000 then api_results_limit = 1000 elseif api_results_limit < 1 then api_results_limit = 1 end local len = #urlstr urlstr[len+1] = "&api_results_limit=" urlstr[len+2] = url_encode(api_results_limit) else io.stderr:write("Results limit must be a number!\n") end end
+    local response = http.post("http://pastebin.com/api/api_post.php", table.concat(urlstr)).readAll()
+    if string.find(response,"<") then
+        return parse(response)
+    else
+        return response
+    end
+end
+
+-- Lists data about the 18 currently trending pastes.
+-- Example: local trendingpastes = pastebin.trending()
+-- 
+-- Returns a list of data about the 18 currently trending pastes, using the table format described at the end of this document.
+function trending()
+    local response = http.post("http://pastebin.com/api/api_post.php", "api_dev_key="..url_encode(api_dev_key).."&api_option=trends").readAll()
+    if string.find(response,"<") then
+        return parse(response)
+    else
+        return response
+    end
+end
+
+-- Lists all of a user's settings. Uses user key from login().
+-- Example: local settings = pastebin.settings(agente382)
+-- 
+-- Returns a list of the user's settings, using the table format described at the end of this document.
+function settings(api_user_key)
+    assert(type(api_user_key) == "string", "Enter a valid user key as a string!")
+    local response = http.post("http://pastebin.com/api/api_post.php", "api_dev_key="..url_encode(api_dev_key).."&api_user_key="..url_encode(api_user_key).."&api_option=userdetails").readAll()
+    if string.find(response,"<") then
+        return unpack(parse(response))
+    else
+        return response
+    end
+end
+
+-- Table Format:
+--      Pastes:
+--      {
+--          [1] = {
+--              date = "1297953260",
+--              format_short = "javascript",
+--              key = "0b42rwhf",
+--              size = "15",
+--              hits = "15",
+--              format_long = "JavaScript",
+--              url = "http://pastebin.com/0b42rwhf",
+--              title = "javascript test",
+--              private = "0",        -- 0:Public - 1:Unlisted - 2:Private
+--              expire_date = "1297956860"
+--          },
+--          [2] = {
+--              date = "1297694343",
+--              format_short = "text",
+--              key = "0C343n0d",
+--              size = "490",
+--              hits = "65",
+--              format_long = "None",
+--              url = "http://pastebin.com/0C343n0d",
+--              title = "Welcome To Pastebin V3",
+--              private = "0",        -- 0:Public - 1:Unlisted - 2:Private
+--              expire_date = "0"
+--          }
+--      }
+--      Settings:
+--      {
+--          format_short = "text",
+--          email = "oh@dear.com",
+--          website = "http://myawesomesite.com",
+--          location = "New York",
+--          expiration = "N",
+--          avatar_url = "http://pastebin.com/cache/a/1.jpg",
+--          account_type = "1",        -- 0:Free - 1:Pro
+--          private = "1",        -- 0:Public - 1:Unlisted - 2:Private
+--          name = "wiz_kitty"
+--      }
