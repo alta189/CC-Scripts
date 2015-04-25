@@ -38,7 +38,7 @@ function printStackString()
     for name,value in pairs(stack) do
       result = result .. name.. ' = ' .. tostring(value) .. "\n"
       if type(value) == "table" then
-        printTable(table, 1)
+        printTable(value, 1)
       end
     end
     result = result .. "\n \n"
