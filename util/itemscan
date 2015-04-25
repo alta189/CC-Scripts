@@ -8,6 +8,7 @@ end
 
 if (side == "") then
   error('You must choose a side')
+end
 
 inv = peripheral.wrap(side)
 if not inv then 
