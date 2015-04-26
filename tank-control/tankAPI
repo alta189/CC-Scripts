@@ -6,6 +6,7 @@ function getServerId()
 end
 
 function getTank(pos, serverId)
+  serverId = serverId or getServerId()
   rednet.send(serverId, pos, protocol)
   local senderId, message, msgProtocol = rednet.receive(protocol, timeout)
   if message ~= nil then
