@@ -65,7 +65,7 @@ while true do
   if event == "button_click" then
     print(p1)
   elseif event == "timer" and p1 == updateTimer then
-    draw()
     update()
+    draw()
   end
 end
