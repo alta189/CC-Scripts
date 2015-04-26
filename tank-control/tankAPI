@@ -1,8 +1,11 @@
 local protocol = "tankServer"
 local timeout = 4
 
-function getTank(pos)
-  local serverId = rednet.lookup("tankServer")
+function getServerId() 
+  return rednet.lookup(protocol)
+end
+
+function getTank(pos, serverId)
   rednet.send(serverId, pos, protocol)
   local senderId, message, msgProtocol = rednet.receive(protocol, timeout)
   if message ~= nil then
