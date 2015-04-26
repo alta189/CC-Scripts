@@ -12,10 +12,15 @@ local mon = peripheral.wrap(monSide)
 local t = touchpoint.new(monSide)
 local tankServerId = tankAPI.getServerId()
 local growth = false
+local auto = false
+local status = false
+local tank = nil
+
+function update()
+  tank = tankAPI.getTank(tankPOS, tankServerId)
+end
 
 function drawInfo()
-  tank = tankAPI.getTank(tankPOS, tankServerId)
-
   mon.setBackgroundColor(colors.black)
   mon.setCursorPos(2, 2)
   mon.write("XP: "..barrel.getStoredItems()["qty"] or 0)
@@ -25,13 +30,12 @@ function drawInfo()
   mon.write("liq XP: "..tank["Amount"])
   mon.setCursorPos(2, 6)
   mon.write("  of "..tank["Capacity"])
-  
 end
 
-function resetGrowth() {
+function resetGrowth() 
   pedestal.pushItemIntoSlot("down",1,1,1)
   pedestal.pullItemIntoSlot("down",1,1,1)
-}
+end
 
 function draw()
   mon.setBackgroundColor(colors.black)
@@ -59,7 +63,9 @@ while true do
   --# handleEvents will convert monitor_touch events to button_click if it was on a button
   local event, p1 = t:handleEvents(os.pullEvent())
   if event == "button_click" then
+    print(p1)
   elseif event == "timer" and p1 == updateTimer then
     draw()
+    update()
   end
 end
