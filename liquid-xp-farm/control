@@ -1,0 +1,65 @@
+os.loadAPI("/libs/touchpoint")
+os.loadAPI("/tank-control/tankAPI")
+
+local monSide = "monitor_2"
+local pedestalSide = "dm_pedestal_0"
+local barrelSide = "deep_storage_unit_0"
+local tankPOS = "-3,5,5"
+
+local pedestal = peripheral.wrap(pedestalSide)
+local barrel = peripheral.wrap(barrelSide)
+local mon = peripheral.wrap(monSide)
+local t = touchpoint.new(monSide)
+local tankServerId = tankAPI.getServerId()
+local growth = false
+
+function drawInfo()
+  tank = tankAPI.getTank(tankPOS, tankServerId)
+
+  mon.setBackgroundColor(colors.black)
+  mon.setCursorPos(2, 2)
+  mon.write("XP: "..barrel.getStoredItems()["qty"] or 0)
+  mon.setCursorPos(2, 3)
+  mon.write("  of "..barrel.getMaxStoredItems() or 0)
+  mon.setCursorPos(2, 5)
+  mon.write("liq XP: "..tank["Amount"])
+  mon.setCursorPos(2, 6)
+  mon.write("  of "..tank["Capacity"])
+  
+end
+
+function resetGrowth() {
+  pedestal.pushItemIntoSlot("down",1,1,1)
+  pedestal.pullItemIntoSlot("down",1,1,1)
+}
+
+function draw()
+  mon.setBackgroundColor(colors.black)
+  mon.setCursorPos(1,1)
+  mon.clear()
+
+  t:draw()
+
+  drawInfo()
+end
+
+mon.clear()
+resetGrowth()
+
+t:add("On", nil, 2, 10, 8, 13, colors.red, colors.lime)
+t:add("Off", nil, 10, 10, 16, 13, colors.red, colors.lime)
+t:add("Auto", nil, 2, 15, 8, 18, colors.red, colors.lime)
+t:add("Growth", nil, 10, 15, 16, 18, colors.red, colors.lime)
+
+draw()
+
+local updateTimer = os.startTimer(5)
+
+while true do
+  --# handleEvents will convert monitor_touch events to button_click if it was on a button
+  local event, p1 = t:handleEvents(os.pullEvent())
+  if event == "button_click" then
+  elseif event == "timer" and p1 == updateTimer then
+    draw()
+  end
+end
