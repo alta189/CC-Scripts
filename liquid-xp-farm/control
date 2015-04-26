@@ -59,7 +59,7 @@ function toggleGrowth()
 end
 
 function isActive(button)
-  return t.buttonList[button].isActive
+  return t.buttonList[button].active
 end
 
 function setActive(button, value)
@@ -101,8 +101,10 @@ while true do
       growth = not growth
     end
     update()
+    draw()
   elseif event == "timer" and p1 == updateTimer then
     update()
     draw()
+    updateTimer = os.startTimer(5)
   end
 end
