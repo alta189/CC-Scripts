@@ -5,6 +5,9 @@ local monSide = "monitor_2"
 local pedestalSide = "dm_pedestal_0"
 local barrelSide = "deep_storage_unit_0"
 local tankPOS = "-3,5,5"
+local rednetSide = "top"
+
+rednet.open(rednetSide)
 
 local pedestal = peripheral.wrap(pedestalSide)
 local barrel = peripheral.wrap(barrelSide)
@@ -18,6 +21,13 @@ local tank = nil
 
 function update()
   tank = tankAPI.getTank(tankPOS, tankServerId)
+end
+
+function updateButtons()
+  setActive("On", status)
+  setActive("Off", not status)
+  setActive("Auto", auto)
+  setActive("Grow", growth)
 end
 
 function drawInfo()
@@ -37,6 +47,14 @@ function resetGrowth()
   pedestal.pullItemIntoSlot("down",1,1,1)
 end
 
+function isActive(button)
+  return t.buttonList[button].isActive
+end
+
+function setActive(button, value)
+  t.buttonList[button].active = value
+end
+
 function draw()
   mon.setBackgroundColor(colors.black)
   mon.setCursorPos(1,1)
@@ -53,8 +71,9 @@ resetGrowth()
 t:add("On", nil, 2, 10, 8, 13, colors.red, colors.lime)
 t:add("Off", nil, 10, 10, 16, 13, colors.red, colors.lime)
 t:add("Auto", nil, 2, 15, 8, 18, colors.red, colors.lime)
-t:add("Growth", nil, 10, 15, 16, 18, colors.red, colors.lime)
+t:add("Grow", nil, 10, 15, 16, 18, colors.red, colors.lime)
 
+update()
 draw()
 
 local updateTimer = os.startTimer(5)
@@ -63,7 +82,12 @@ while true do
   --# handleEvents will convert monitor_touch events to button_click if it was on a button
   local event, p1 = t:handleEvents(os.pullEvent())
   if event == "button_click" then
-    print(p1)
+    if p1 == "On" then
+    elseif p1 == "Off" then
+    elseif p1 == "Auto" then
+    elseif p1 == "Grow" then
+    end
+    updateButtons()
   elseif event == "timer" and p1 == updateTimer then
     update()
     draw()
