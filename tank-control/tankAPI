@@ -3,7 +3,7 @@ local timeout = 4
 
 function getTank(pos)
   local serverId = rednet.lookup("tankServer")
-  rednet.send(serverId, pos)
+  rednet.send(serverId, pos, protocol)
   local senderId, message, msgProtocol = rednet.receive(protocol, timeout)
   if message ~= nil then
     local result = textutils.unserialize(message)
