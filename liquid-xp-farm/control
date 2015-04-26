@@ -49,12 +49,13 @@ end
 
 function resetGrowth() 
   pedestal.pushItemIntoSlot("down",1,1,1)
+  os.sleep(5)
   pedestal.pullItemIntoSlot("down",1,1,1)
 end
 
-function growthOn()
+function toggleGrowth()
   redstone.setBundledOutput(bundledSide, colors.combine(redstone.getBundledOutput(bundledSide), growthActivatorColor))
-  os.sleep(.15)
+  os.sleep(.2)
   redstone.setBundledOutput(bundledSide, colors.subtract(redstone.getBundledOutput(bundledSide), growthActivatorColor))
 end
 
@@ -97,11 +98,7 @@ while true do
     elseif p1 == "Off" then
     elseif p1 == "Auto" then
     elseif p1 == "Grow" then
-      if growth then
-        resetGrowth()
-      else
-        growthOn()
-      end
+      toggleGrowth()
       growth = not growth
     end
     update()
