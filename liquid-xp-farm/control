@@ -39,6 +39,18 @@ function update()
         turnOn()
       end
     end
+    local barrelDiff = barrel.getMaxStoredItems() - barrel.getStoredItems()
+    if barrelDiff < barrelThresh then
+      if not growth then
+        growth = true
+        toggleGrowth()
+      end
+    else
+      if growth then
+        growth = false
+        toggleGrowth()
+      end
+    end
   end
 
   updateButtons()
