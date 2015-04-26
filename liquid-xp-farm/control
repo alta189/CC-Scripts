@@ -133,6 +133,10 @@ while true do
       end
     elseif p1 == "Auto" then
       auto = not auto
+      if not auto then
+        status = false
+        turnOff()
+      end
     elseif p1 == "Grow" then
       toggleGrowth()
       growth = not growth
