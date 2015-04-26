@@ -39,7 +39,7 @@ function update()
         turnOn()
       end
     end
-    local barrelDiff = barrel.getMaxStoredItems() - barrel.getStoredItems()
+    local barrelDiff = barrel.getMaxStoredItems() - barrel.getStoredItems()["qty"]
     if barrelDiff < barrelThresh then
       if not growth then
         growth = true
