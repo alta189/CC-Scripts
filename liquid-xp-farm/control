@@ -9,6 +9,7 @@ local rednetSide = "top"
 local bundledSide = "bottom"
 local xpActivatorColor = colors.yellow
 local growthActivatorColor = colors.brown
+local autoThreshhold = 10000
 
 rednet.open(rednetSide)
 
@@ -24,6 +25,22 @@ local tank = nil
 
 function update()
   tank = tankAPI.getTank(tankPOS, tankServerId)
+
+  if auto then
+    local tankCapacity = tank["Capcacity"] or 0
+    local tankAmount = tank[Amount] or 0
+    status = false
+
+    if tankCapacity >= 0 then
+      local tankDiff = tankCapacity - tankAmount 
+      if autoThreshhold < 10000 then
+        turnOff()
+      else
+        status = true
+        turnOn()
+      end
+    end
+  end
 
   updateButtons()
 end
@@ -67,6 +84,14 @@ function setActive(button, value)
   t.buttonList[button].active = value
 end
 
+function turnOn() 
+  redstone.setBundledOutput(bundledSide, colors.combine(redstone.getBundledOutput(bundledSide), xpActivatorColor))
+end
+
+function turnOff()
+  redstone.setBundledOutput(bundledSide, colors.subtract(redstone.getBundledOutput(bundledSide), xpActivatorColor))
+end
+
 function draw()
   mon.setBackgroundColor(colors.black)
   mon.setCursorPos(1,1)
@@ -95,8 +120,19 @@ while true do
   local event, p1 = t:handleEvents(os.pullEvent())
   if event == "button_click" then
     if p1 == "On" then
+      if not status then
+        status = true
+        auto = false
+        turnOn()
+      end
     elseif p1 == "Off" then
+      if status then
+        status = false
+        auto = false
+        turnOff()
+      end
     elseif p1 == "Auto" then
+      auto = not auto
     elseif p1 == "Grow" then
       toggleGrowth()
       growth = not growth
