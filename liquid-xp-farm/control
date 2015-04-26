@@ -2,7 +2,6 @@ os.loadAPI("/libs/touchpoint")
 os.loadAPI("/tank-control/tankAPI")
 
 local monSide = "monitor_2"
-local pedestalSide = "dm_pedestal_0"
 local barrelSide = "deep_storage_unit_0"
 local tankPOS = "-3,5,5"
 local rednetSide = "top"
@@ -13,11 +12,11 @@ local autoThreshhold = 10000
 
 rednet.open(rednetSide)
 
-local pedestal = peripheral.wrap(pedestalSide)
 local barrel = peripheral.wrap(barrelSide)
 local mon = peripheral.wrap(monSide)
 local t = touchpoint.new(monSide)
 local tankServerId = tankAPI.getServerId()
+local pedestalTurtleId = rednet.lookup("pedestalTurtle")
 local growth = false
 local auto = false
 local status = false
@@ -65,9 +64,8 @@ function drawInfo()
 end
 
 function resetGrowth() 
-  pedestal.pushItemIntoSlot("down",1,1,1)
+  rednet.send(pedestalTurtleId, "reset", "pedestalTurtle")
   os.sleep(5)
-  pedestal.pullItemIntoSlot("down",1,1,1)
 end
 
 function toggleGrowth()

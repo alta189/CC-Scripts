@@ -1,0 +1,27 @@
+local rednetSide = "left"
+local hostname = "xpFarmTurtle"
+local protocol = "pedestalTurtle"
+
+rednet.open(rednetSide)
+rednet.host(protocol, hostname)
+
+function resetPedestal()
+  turtle.select(1)
+  turtle.suckUp()
+  os.sleep(.05)
+  turtle.select(2)
+  turtle.digUp()
+  os.sleep(.05)
+  turtle.placeUp()
+  os.sleep(0.05)
+  turtle.select(1)
+  turtle.dropUp()
+end
+
+while true do
+  local senderId, message, msgProtocol = rednet.receive(protocol)
+  print(senderId.."["..msgProtocol.."]: "..message)
+  if message == "reset" then
+    resetPedestal()
+  end
+end
