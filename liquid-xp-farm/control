@@ -9,6 +9,7 @@ local bundledSide = "bottom"
 local xpActivatorColor = colors.yellow
 local growthActivatorColor = colors.brown
 local autoThreshhold = 10000
+local barrelThresh = 100
 
 rednet.open(rednetSide)
 
