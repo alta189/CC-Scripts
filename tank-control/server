@@ -1,0 +1,24 @@
+os.loadAPI("ocs/api/sensor")
+
+local scannerSide = "back"
+local rednetSide = "back"
+
+local protocol = "tankServer"
+local hostname = "altaLabTankServer"
+
+rednet.open(rednetSide)
+rednet.host(protocol, hostname)
+local prox = sensor.wrap(scannerSide)
+
+print(os.getComputerID().." :: "..os.getComputerLabel())
+
+while true do
+  local senderId, message, msgProtocol = rednet.receive("altaCastleGate")
+  print(senderId.."["..msgProtocol.."]: "..message)
+  if msgProtocol == protocol and message ~= nil then
+    local result = {
+      data = prox.getTargetDetails(message)
+    }
+    rednet.send(senderId, textutils.serialize(result))
+  end
+end
