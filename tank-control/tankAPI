@@ -1,0 +1,18 @@
+local protocol = "tankServer"
+local timeout = 4
+
+function getTank(pos)
+  local serverId = rednet.lookup("tankServer")
+  rednet.send(serverId, pos)
+  local senderId, message, msgProtocol = rednet.receive(protocol, timeout)
+  if message ~= nil then
+    local result = textutils.unserialize(message)
+    if result ~= nil and type(result) == "table" then
+      local tank = result["data"]
+      if tank ~= nil and type(tank) == "table" then
+        return tank["Tanks"][1]
+      end
+    end
+  end
+  return nil
+end
